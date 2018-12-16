@@ -3,6 +3,10 @@ import {MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
 import {UserService} from '../service/user.service';
 
+/**
+ * https://material.angular.io/components/table/examples
+ */
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',

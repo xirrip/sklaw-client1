@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { LawClient } from '../model/lawclient';
+import {AuthorizationService} from './authorization.service';
 
 
 const httpOptions = {
@@ -21,16 +22,21 @@ const httpOptions = {
 })
 export class UserService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authorizationService: AuthorizationService) {}
 
-  private clientsUrl = 'http://localhost:8080/clients';
+  private clientsUrl = 'http://localhost:8082/clients';
 
   getClients (): Observable<LawClient[]> {
+
+    return this.authorizationService.getResource<LawClient[]>(this.clientsUrl);
+
+    /*
     return this.http.get<LawClient[]>(this.clientsUrl)
       .pipe(
-        tap(_ => this.log('fetched heroes')),
-        catchError(this.handleError('getHeroes', []))
+        tap(_ => this.log('fetched clients')),
+        catchError(this.handleError('getClients', []))
       );
+    */
   }
 
 

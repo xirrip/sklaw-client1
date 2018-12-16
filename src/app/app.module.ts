@@ -15,6 +15,12 @@ import {UserService} from './service/user.service';
  * https://angular.io/tutorial
  * https://www.devglan.com/angular/angular-material-app
  *
+ * another long getting started:
+ * https://go.tiny.cloud/blog/angular-5-tutorial-step-step-guide-first-angular-5-app/
+ *
+ * JWT:
+ * https://stackoverflow.com/questions/51654604/jwt-with-angular-and-springboot
+ *
  */
 
 @NgModule({

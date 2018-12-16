@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {AuthorizationService} from '../service/authorization.service';
 
 @Component({
   selector: 'app-login',
@@ -8,22 +9,30 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router : Router) {
+  constructor(private router: Router, private authorizationService: AuthorizationService) {
   }
 
   username: string
   password: string
 
   login(): void {
-    if (this.username === 'admin' && this.password === 'admin') {
-      console.log('navigating to user');
-      this.router.navigate(['user']);
-    } else {
-      alert('Invalid credentials');
-    }
+
+    const loginData = { username: this.username, password: this.password };
+    this.authorizationService.obtainAccessToken(loginData, this.onSuccess.bind(this), this.onFail.bind(this));
+
+    // TODO catch login error...???
   }
 
   ngOnInit() {
+  }
+
+  onSuccess(): void {
+    console.log('Login successful!');
+    this.router.navigate(['user']);
+  }
+
+  onFail(): void {
+    alert('Login failed.');
   }
 
 }
