@@ -1,16 +1,16 @@
 export class LawClient {
   id: Number;
-  nickName: String;
-  firstName: String;
-  middleName: String;
-  lastName: String;
+  nickName: string;
+  firstName: string;
+  middleName: string;
+  lastName: string;
 
-  address: String;
-  city: String;
-  zip: String;
-  country: String;
+  address: string;
+  city: string;
+  zip: string;
+  country: string;
 
-  phoneNumber: String;
-  email: String;
+  phoneNumber: string;
+  email: string;
 
 }

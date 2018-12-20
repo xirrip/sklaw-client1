@@ -2,15 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import {catchError, map, retry, tap} from 'rxjs/operators';
 
 import { LawClient } from '../model/lawclient';
-import {AuthorizationService} from './authorization.service';
-
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 /**
  * https://angular.io/guide/http
@@ -22,21 +16,17 @@ const httpOptions = {
 })
 export class UserService {
 
-  constructor(private http: HttpClient, private authorizationService: AuthorizationService) {}
+  constructor(private http: HttpClient) {}
 
   private clientsUrl = 'http://localhost:8082/clients';
 
   getClients (): Observable<LawClient[]> {
-
-    return this.authorizationService.getResource<LawClient[]>(this.clientsUrl);
-
-    /*
     return this.http.get<LawClient[]>(this.clientsUrl)
       .pipe(
-        tap(_ => this.log('fetched clients')),
+        tap(_ => console.log('fetched clients')),
         catchError(this.handleError('getClients', []))
       );
-    */
+
   }
 
 
@@ -48,21 +38,9 @@ export class UserService {
    */
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
-
+      console.log(error); // log to console instead
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-  }
-
-  /** Log a HeroService message with the MessageService */
-  private log(message: string) {
-    // this.messageService.add(`HeroService: ${message}`);
-    console.log(`ClientService: ${message}`);
   }
 }
