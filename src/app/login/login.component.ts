@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthorizationService} from '../service/authorization.service';
+import {User} from '../model/user';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +18,15 @@ export class LoginComponent implements OnInit {
 
   login(): void {
 
-    const loginData = { username: this.username, password: this.password };
-    this.authorizationService.obtainAccessToken(loginData, this.onSuccess.bind(this), this.onFail.bind(this));
-
-    // TODO catch login error...???
+    const loginData = new User(this.username, null, this.password);
+    this.authorizationService.login(loginData)
+      .subscribe(
+        user => {
+          console.log('Login successful!');
+          this.router.navigate(['user']);
+        },
+        _ => alert('Login failed!')
+      );
   }
 
   ngOnInit() {

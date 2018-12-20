@@ -4,8 +4,9 @@ import { Cookie } from 'ng2-cookies';
 import { HttpClient, HttpHeaders, HttpResponse,  } from '@angular/common/http';
 
 import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {TokenResponse} from './token-response';
+import {User} from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -17,22 +18,30 @@ export class AuthorizationService {
   constructor(private _router: Router, private _http: HttpClient) { }
 
   // TODO change to login service, returning user as Observable
-  obtainAccessToken(loginData, onSuccess, onFail) {
-    this._http.post<TokenResponse>('http://127.0.0.1:8082/auth/login', loginData, { withCredentials: true })
-      .pipe()
-      .subscribe(
-        data => {
-          this.saveToken(data);
-          console.log(Cookie.get('access_token'));
-          onSuccess(); },
-        err => onFail()
+  login(loginData: User): Observable<User> {
+    return this._http.post<TokenResponse>('http://127.0.0.1:8082/auth/login', loginData, { withCredentials: true })
+      .pipe(
+        tap( _ => console.log('-- authenticated --')),
+        map( tokenResponse => {
+          this.saveToken(tokenResponse);
+          const user = new User(tokenResponse.username, tokenResponse.email, null);
+          return user;
+        })
       );
   }
 
   saveToken(token: TokenResponse) {
     const expireDate = new Date().getTime() + (1000 * token.expires_in);
     Cookie.set( 'access_token', token.access_token, expireDate);
+    Cookie.set('username', token.username, expireDate);
+    Cookie.set('email', token.email, expireDate);
+    Cookie.set('grants', token.grants, expireDate);
+
     console.log('Saved Access token: ' + Cookie.get('access_token'));
+  }
+
+  registerUser(registerUser: User): Observable<User> {
+    return this._http.post<User>('http://127.0.0.1:8082/account/user/register', registerUser);
   }
 
   checkCookie() {

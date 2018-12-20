@@ -11,6 +11,7 @@ import { UserComponent } from './user/user.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {UserService} from './service/user.service';
 import {JwtInterceptor} from './interceptor/jwt-interceptor';
+import { RegisterComponent } from './register/register.component';
 
 /**
  * https://angular.io/tutorial
@@ -40,7 +41,8 @@ import {JwtInterceptor} from './interceptor/jwt-interceptor';
   declarations: [
     AppComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

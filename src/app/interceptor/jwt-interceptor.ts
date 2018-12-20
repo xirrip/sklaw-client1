@@ -47,8 +47,11 @@ export class JwtInterceptor implements HttpInterceptor {
                 return this.handle401Error(request, next);
               case 400:
                 return <any>this._authorizationService.logout();
+              default:
+                return throwError(err);
             }
           } else {
+            console.log('re-throwing error');
             return throwError(err);
           }
         }));

@@ -16,31 +16,13 @@ import { LawClient } from '../model/lawclient';
 })
 export class UserService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   private clientsUrl = 'http://localhost:8082/clients';
 
-  getClients (): Observable<LawClient[]> {
-    return this.http.get<LawClient[]>(this.clientsUrl)
-      .pipe(
-        tap(_ => console.log('fetched clients')),
-        catchError(this.handleError('getClients', []))
-      );
-
+  getClients(): Observable<LawClient[]> {
+    return this.http.get<LawClient[]>(this.clientsUrl);
   }
 
-
-  /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-  private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.log(error); // log to console instead
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
-  }
 }
