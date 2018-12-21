@@ -1,6 +1,6 @@
 {
-  "name": "ex2",
-  "version": "0.0.0",
+  "name": "SkunkLawClient",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

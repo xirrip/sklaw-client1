@@ -6,13 +6,16 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatProgressSpinnerModule, MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatDialogModule, MatDividerModule
 } from '@angular/material';
 
 @NgModule({
   imports: [ CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatFormFieldModule,
-    MatProgressSpinnerModule, MatInputModule, MatTableModule ],
+    MatProgressSpinnerModule, MatInputModule, MatTableModule, MatDialogModule, MatDividerModule
+  ],
   exports: [ CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatFormFieldModule,
-    MatProgressSpinnerModule, MatInputModule, MatTableModule ],
+    MatProgressSpinnerModule, MatInputModule, MatTableModule, MatDialogModule, MatDividerModule
+  ],
 })
 export class CustomMaterialModule { }

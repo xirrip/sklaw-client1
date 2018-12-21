@@ -12,6 +12,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {UserService} from './service/user.service';
 import {JwtInterceptor} from './interceptor/jwt-interceptor';
 import { RegisterComponent } from './register/register.component';
+import { NewcaseDialogComponent } from './newcase-dialog/newcase-dialog.component';
 
 /**
  * https://angular.io/tutorial
@@ -35,6 +36,9 @@ import { RegisterComponent } from './register/register.component';
  * and maybe run angular over https:
  * https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8
  * angular 6+ config: https://stackoverflow.com/questions/39210467/get-angular-cli-to-ng-serve-over-https
+ *
+ * complete UI tutorial:
+ * https://www.sitepoint.com/angular-material-design-components/
  */
 
 @NgModule({
@@ -42,7 +46,8 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     LoginComponent,
     UserComponent,
-    RegisterComponent
+    RegisterComponent,
+    NewcaseDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +64,9 @@ import { RegisterComponent } from './register/register.component';
       useClass: JwtInterceptor,
       multi: true
     }
+  ],
+  entryComponents: [
+    NewcaseDialogComponent
   ],
   bootstrap: [AppComponent]
 })

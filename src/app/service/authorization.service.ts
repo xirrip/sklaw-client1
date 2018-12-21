@@ -62,6 +62,10 @@ export class AuthorizationService {
 
   logout() {
     Cookie.delete('access_token');
+    Cookie.delete('username');
+    Cookie.delete('email');
+    Cookie.delete('grants');
+
     this._router.navigate(['/login']);
   }
 

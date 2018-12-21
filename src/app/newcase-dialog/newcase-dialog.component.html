@@ -1,0 +1,73 @@
+<div>
+  <h2 mat-dialog-title>Create new case</h2>
+  <mat-dialog-content>
+    <h3>Client</h3>
+
+    <form class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="firstname" [(ngModel)]="lawClient.firstName" name="first name" required>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="lastname" [(ngModel)]="lawClient.lastName" name="last name" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="address" [(ngModel)]="lawClient.address" name="address">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="phone" [(ngModel)]="lawClient.phoneNumber" name="phone">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="email" [(ngModel)]="lawClient.email" name="email">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <mat-divider></mat-divider>
+
+      <h3>Case</h3>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="type" [(ngModel)]="lawCase.type" name="type" required>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="name" [(ngModel)]="lawCase.name" name="name" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="description" [(ngModel)]="lawCase.description" name="description">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-flat-button [mat-dialog-close]="true">Create</button>
+    <button mat-flat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>
