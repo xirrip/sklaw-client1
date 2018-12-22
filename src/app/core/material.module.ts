@@ -7,15 +7,17 @@ import {
   MatInputModule,
   MatProgressSpinnerModule, MatTableModule,
   MatToolbarModule,
-  MatDialogModule, MatDividerModule
+  MatDialogModule, MatDividerModule, MatRadioModule, MatOptionModule, MatAutocompleteModule, MatSelectModule
 } from '@angular/material';
 
 @NgModule({
   imports: [ CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatFormFieldModule,
-    MatProgressSpinnerModule, MatInputModule, MatTableModule, MatDialogModule, MatDividerModule
+    MatProgressSpinnerModule, MatInputModule, MatTableModule, MatDialogModule, MatDividerModule,
+    MatRadioModule, MatOptionModule, MatAutocompleteModule, MatSelectModule
   ],
   exports: [ CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatFormFieldModule,
-    MatProgressSpinnerModule, MatInputModule, MatTableModule, MatDialogModule, MatDividerModule
+    MatProgressSpinnerModule, MatInputModule, MatTableModule, MatDialogModule, MatDividerModule,
+    MatRadioModule, MatOptionModule, MatAutocompleteModule, MatSelectModule
   ],
 })
 export class CustomMaterialModule { }

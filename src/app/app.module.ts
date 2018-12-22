@@ -5,11 +5,11 @@ import { CustomMaterialModule } from './core/material.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './core/app-routing.module';
 import { UserComponent } from './user/user.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {UserService} from './service/user.service';
+import {ClientService} from './service/client.service';
 import {JwtInterceptor} from './interceptor/jwt-interceptor';
 import { RegisterComponent } from './register/register.component';
 import { NewcaseDialogComponent } from './newcase-dialog/newcase-dialog.component';
@@ -39,6 +39,13 @@ import { NewcaseDialogComponent } from './newcase-dialog/newcase-dialog.componen
  *
  * complete UI tutorial:
  * https://www.sitepoint.com/angular-material-design-components/
+ *
+ * rich text editors:
+ * https://npms.io/search?q=Angular%206%20WYSIWYG%20editor
+ * https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html
+ * https://www.npmjs.com/package/ngx-quill
+ * https://www.froala.com/wysiwyg-editor
+ * https://quilljs.com/docs/quickstart/
  */
 
 @NgModule({
@@ -54,11 +61,12 @@ import { NewcaseDialogComponent } from './newcase-dialog/newcase-dialog.componen
     BrowserAnimationsModule,
     CustomMaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
   providers: [
-    UserService,
+    ClientService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,

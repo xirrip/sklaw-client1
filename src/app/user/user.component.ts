@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
-import {UserService} from '../service/user.service';
+import {ClientService} from '../service/client.service';
 import {of} from 'rxjs';
 
 /**
@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
   displayedColumns = ['id', 'nickName', 'firstName', 'lastName'];
 
   dataSource = new MatTableDataSource();
-  constructor(private _router: Router, private userService: UserService) {
+  constructor(private _router: Router, private userService: ClientService) {
     console.log('user component constructor.');
   }
 

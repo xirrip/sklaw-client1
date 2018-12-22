@@ -7,35 +7,58 @@
       <table class="example-full-width" cellspacing="0">
         <tr>
           <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="firstname" [(ngModel)]="lawClient.firstName" name="first name" required>
-            </mat-form-field>
+            <mat-radio-group class="newcase-radio-group" name="newClientEntryToggle" [(ngModel)]="newClientEntryToggle">
+              <mat-radio-button class="newcase-radio-button" [value]="false">Select existing client</mat-radio-button>
+              <mat-radio-button class="newcase-radio-button" [value]="true">Create new client</mat-radio-button>
+            </mat-radio-group>
           </td>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="lastname" [(ngModel)]="lawClient.lastName" name="last name" required>
-            </mat-form-field>
-          </td>
+          <div *ngIf="newClientEntryToggle == false">
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="client" [(ngModel)]="selectedClient" name="client" required>
+                  <mat-option *ngFor="let client of allClients" [value]="client">
+                    {{client.firstName}} {{client.lastName}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </div>
         </tr>
-        <tr>
-          <td colspan="2">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="address" [(ngModel)]="lawClient.address" name="address">
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="phone" [(ngModel)]="lawClient.phoneNumber" name="phone">
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="email" [(ngModel)]="lawClient.email" name="email">
-            </mat-form-field>
-          </td>
-        </tr>
+        <div *ngIf="newClientEntryToggle == true">
+
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="firstname" [(ngModel)]="lawClient.firstName" name="first name" required autofocus>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="lastname" [(ngModel)]="lawClient.lastName" name="last name" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="address" [(ngModel)]="lawClient.address" name="address">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="phone" [(ngModel)]="lawClient.phoneNumber" name="phone">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="email" [(ngModel)]="lawClient.email" name="email">
+              </mat-form-field>
+            </td>
+          </tr>
+        </div>
+
       </table>
 
       <mat-divider></mat-divider>

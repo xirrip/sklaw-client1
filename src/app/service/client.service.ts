@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import {catchError, map, retry, tap} from 'rxjs/operators';
 
 import { LawClient } from '../model/lawclient';
+import {LawCase} from '../model/lawcase';
 
 /**
  * https://angular.io/guide/http
@@ -14,7 +14,7 @@ import { LawClient } from '../model/lawclient';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class ClientService {
 
   constructor(private http: HttpClient) {
   }
@@ -23,6 +23,14 @@ export class UserService {
 
   getClients(): Observable<LawClient[]> {
     return this.http.get<LawClient[]>(this.clientsUrl);
+  }
+
+  createClient(lawClient: LawClient): Observable<LawClient> {
+    return this.http.post<LawClient>(this.clientsUrl, lawClient);
+  }
+
+  createCase(lawClient: LawClient, lawCase: LawCase): Observable<LawCase> {
+    return this.http.post<LawCase>(this.clientsUrl + '/' + lawClient.id + '/cases', lawCase);
   }
 
 }
