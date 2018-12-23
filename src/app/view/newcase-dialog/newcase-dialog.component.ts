@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {LawCase} from '../model/lawcase';
-import {LawClient} from '../model/lawclient';
+import {Component, OnInit} from '@angular/core';
+import {LawCase} from '../../model/lawcase';
+import {LawClient} from '../../model/lawclient';
 import {FormControl, Validators} from '@angular/forms';
-import {ClientService} from '../service/client.service';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import {ClientService} from '../../service/client.service';
 
 @Component({
   selector: 'app-newcase-dialog',

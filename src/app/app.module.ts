@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { CustomMaterialModule } from './core/material.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './view/login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './core/app-routing.module';
-import { UserComponent } from './user/user.component';
+import { ClientListComponent } from './view/client-list/client-list.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ClientService} from './service/client.service';
 import {JwtInterceptor} from './interceptor/jwt-interceptor';
-import { RegisterComponent } from './register/register.component';
-import { NewcaseDialogComponent } from './newcase-dialog/newcase-dialog.component';
+import { RegisterComponent } from './view/register/register.component';
+import { NewcaseDialogComponent } from './view/newcase-dialog/newcase-dialog.component';
 
 /**
  * https://angular.io/tutorial
@@ -52,7 +52,7 @@ import { NewcaseDialogComponent } from './newcase-dialog/newcase-dialog.componen
   declarations: [
     AppComponent,
     LoginComponent,
-    UserComponent,
+    ClientListComponent,
     RegisterComponent,
     NewcaseDialogComponent
   ],

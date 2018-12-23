@@ -1,0 +1,12 @@
+<mat-card *ngFor="let client of clients">
+  <mat-card-title>{{client.firstName}} {{client.lastName}}</mat-card-title>
+  <mat-card-content>
+    <div *ngIf="client.nickName">{{client.nickName}}</div>
+    {{client.address}} <br>
+    {{client.zip}} {{client.city}} <br>
+    <div *ngIf="client.country!=='Schweiz' && client.country!=='Switzerland'">{{client.country}}</div>
+    Tel. {{client.phoneNumber}} <br>
+    email {{client.email}} <br>
+  </mat-card-content>
+  <mat-card-footer>footer</mat-card-footer>
+</mat-card>

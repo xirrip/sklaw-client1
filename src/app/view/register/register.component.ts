@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthorizationService} from '../service/authorization.service';
+import {AuthorizationService} from '../../service/authorization.service';
 import {catchError, tap} from 'rxjs/operators';
 import {of} from 'rxjs';
-import {User} from '../model/user';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-register',
