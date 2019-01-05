@@ -3,6 +3,11 @@
   <mat-toolbar-row>
     <span><img class="logo" src="../../assets/Pepe_Le_Pew2.png"></span>
     <span class="align-left">SkunkLaw</span>
+    <span class="example-spacer1"></span>
+    <span class="align-left" *ngIf="isLoggedIn()">
+      <a class="my-navbar-item" mat-button routerLink="clients">Clients</a>
+      <a class="my-navbar-item" mat-button routerLink="cases">Cases</a>
+    </span>
     <span class="example-fill-remaining-space"></span>
     <span class="align-center"></span>
     <span class="example-spacer"></span>

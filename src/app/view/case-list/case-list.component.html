@@ -1,0 +1,10 @@
+<mat-card *ngFor="let lawcase of lawcases">
+  <mat-card-title-group>
+    <mat-card-title>{{lawcase.name}}</mat-card-title>
+    <mat-card-subtitle>{{lawcase.type}} | <a mat-flat-button routerLink="/clients/{{lawcase.mainClientId}}"> {{lawcase.mainClient.firstName}} {{lawcase.mainClient.lastName}}</a></mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    {{lawcase.description}}<br>
+  </mat-card-content>
+  <mat-card-footer></mat-card-footer>
+</mat-card>

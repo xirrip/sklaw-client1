@@ -1,0 +1,24 @@
+<mat-card class="client-header">
+    <mat-card-title>{{lawClient?.firstName}} {{lawClient?.lastName}}</mat-card-title>
+    <mat-card-subtitle *ngIf="lawClient?.nickName">{{lawClient?.nickName}}</mat-card-subtitle>
+  <mat-card-content>
+      {{lawClient?.address}} <br>
+      {{lawClient?.zip}} {{lawClient?.city}} <br>
+      <div *ngIf="lawClient?.country!=='Schweiz' && lawClient?.country!=='Switzerland'">{{lawClient?.country}}</div>
+      <br>
+      <i class="material-icons my-icon">call</i> {{lawClient?.phoneNumber}} <br>
+      <i class="material-icons my-icon">mail_outline</i> {{lawClient?.email}} <br>
+    </mat-card-content>
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
+
+<mat-card *ngFor="let lawcase of lawCases">
+  <mat-card-title-group>
+    <mat-card-title>{{lawcase.name}}</mat-card-title>
+    <mat-card-subtitle>{{lawcase.type}}</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    {{lawcase.description}}<br>
+  </mat-card-content>
+  <mat-card-footer></mat-card-footer>
+</mat-card>

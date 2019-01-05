@@ -1,11 +1,5 @@
-.mat-card{
-  margin-bottom: 0.5cm;
-}
-
-.mat-flat-button{
-  padding-left: 0px;
-  margin-left: 0px;
-  margin-bottom: 0.1cm;
+mat-card.client-header{
+  margin-bottom: 1cm;
 }
 
 .my-icon{

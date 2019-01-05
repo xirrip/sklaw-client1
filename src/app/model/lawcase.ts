@@ -8,6 +8,7 @@ export class LawCase {
 
   description: string;
 
-  clients: LawClient[];
+  mainClientId: number;
+  mainClient: LawClient;
 
 }

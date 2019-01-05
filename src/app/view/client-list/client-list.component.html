@@ -1,12 +1,15 @@
 <mat-card *ngFor="let client of clients">
+  <a mat-flat-button routerLink="{{client.id}}">
   <mat-card-title>{{client.firstName}} {{client.lastName}}</mat-card-title>
+  </a>
+  <mat-card-subtitle *ngIf="client.nickName">{{client.nickName}}</mat-card-subtitle>
   <mat-card-content>
-    <div *ngIf="client.nickName">{{client.nickName}}</div>
     {{client.address}} <br>
     {{client.zip}} {{client.city}} <br>
     <div *ngIf="client.country!=='Schweiz' && client.country!=='Switzerland'">{{client.country}}</div>
-    Tel. {{client.phoneNumber}} <br>
-    email {{client.email}} <br>
+    <br>
+    <i class="material-icons my-icon">call</i> {{client.phoneNumber}} <br>
+    <i class="material-icons my-icon">mail_outline</i> {{client.email}} <br>
   </mat-card-content>
-  <mat-card-footer>footer</mat-card-footer>
+  <mat-card-footer></mat-card-footer>
 </mat-card>

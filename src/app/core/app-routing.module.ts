@@ -7,6 +7,8 @@ import {ClientListComponent} from '../view/client-list/client-list.component';
 import {RegisterComponent} from '../view/register/register.component';
 import {AdminGuard} from './admin.guard';
 import {RoleGuard} from './role.guard';
+import {CaseListComponent} from '../view/case-list/case-list.component';
+import {ClientDetailsComponent} from '../view/client-details/client-details.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -15,6 +17,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent, canActivate: [RoleGuard], data: { expectedRole: 'admin'} },
 
   { path: 'clients', component: ClientListComponent },
+  { path: 'cases', component: CaseListComponent },
+
+  { path: 'clients/:id', component: ClientDetailsComponent }
 ];
 
 @NgModule({

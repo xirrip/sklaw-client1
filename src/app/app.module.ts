@@ -13,6 +13,8 @@ import {ClientService} from './service/client.service';
 import {JwtInterceptor} from './interceptor/jwt-interceptor';
 import { RegisterComponent } from './view/register/register.component';
 import { NewcaseDialogComponent } from './view/newcase-dialog/newcase-dialog.component';
+import { CaseListComponent } from './view/case-list/case-list.component';
+import { ClientDetailsComponent } from './view/client-details/client-details.component';
 
 /**
  * https://angular.io/tutorial
@@ -54,7 +56,9 @@ import { NewcaseDialogComponent } from './view/newcase-dialog/newcase-dialog.com
     LoginComponent,
     ClientListComponent,
     RegisterComponent,
-    NewcaseDialogComponent
+    NewcaseDialogComponent,
+    CaseListComponent,
+    ClientDetailsComponent
   ],
   imports: [
     BrowserModule,

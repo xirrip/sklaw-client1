@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
-import { LawClient } from '../model/lawclient';
+import {LawClient} from '../model/lawclient';
 import {LawCase} from '../model/lawcase';
 
 /**
@@ -16,21 +16,30 @@ import {LawCase} from '../model/lawcase';
 })
 export class ClientService {
 
-  constructor(private http: HttpClient) {
+  constructor(private _http: HttpClient) {
   }
 
   private clientsUrl = 'http://localhost:8082/clients';
 
+  getClient(id: number): Observable<LawClient> {
+    return this._http.get<LawClient>(this.clientsUrl + '/' + id);
+  }
+
   getClients(): Observable<LawClient[]> {
-    return this.http.get<LawClient[]>(this.clientsUrl);
+    return this._http.get<LawClient[]>(this.clientsUrl);
   }
 
   createClient(lawClient: LawClient): Observable<LawClient> {
-    return this.http.post<LawClient>(this.clientsUrl, lawClient);
+    return this._http.post<LawClient>(this.clientsUrl, lawClient);
   }
 
   createCase(lawClient: LawClient, lawCase: LawCase): Observable<LawCase> {
-    return this.http.post<LawCase>(this.clientsUrl + '/' + lawClient.id + '/cases', lawCase);
+    return this._http.post<LawCase>(this.clientsUrl + '/' + lawClient.id + '/cases', lawCase);
   }
+
+  getCasesForClient(clientId: number): Observable<LawCase[]> {
+    return this._http.get<LawCase[]>(this.clientsUrl + '/' + clientId + '/cases');
+  }
+
 
 }
