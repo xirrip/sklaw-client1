@@ -15,6 +15,7 @@ import { RegisterComponent } from './view/register/register.component';
 import { NewcaseDialogComponent } from './view/newcase-dialog/newcase-dialog.component';
 import { CaseListComponent } from './view/case-list/case-list.component';
 import { ClientDetailsComponent } from './view/client-details/client-details.component';
+import { CaseDetailsComponent } from './view/case-details/case-details.component';
 
 /**
  * https://angular.io/tutorial
@@ -58,7 +59,8 @@ import { ClientDetailsComponent } from './view/client-details/client-details.com
     RegisterComponent,
     NewcaseDialogComponent,
     CaseListComponent,
-    ClientDetailsComponent
+    ClientDetailsComponent,
+    CaseDetailsComponent
   ],
   imports: [
     BrowserModule,

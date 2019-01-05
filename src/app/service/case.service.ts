@@ -28,6 +28,18 @@ export class CaseService {
       );
   }
 
+  getCase(id: number): Observable<LawCase> {
+    return this._http.get<LawCase>(this.casesUrl + '/' + id)
+      .pipe(
+        flatMap(
+          (aCase: LawCase) => {
+            this._clientService.getClient(aCase.mainClientId).subscribe(c => aCase.mainClient = c);
+            return of(aCase);
+          }
+        )
+      );
+  }
+
   /*
   getCasesOld(): Observable<LawCase[]> {
     return this._http.get<LawCase[]>(this.casesUrl)

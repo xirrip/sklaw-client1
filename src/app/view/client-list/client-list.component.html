@@ -8,8 +8,8 @@
     {{client.zip}} {{client.city}} <br>
     <div *ngIf="client.country!=='Schweiz' && client.country!=='Switzerland'">{{client.country}}</div>
     <br>
-    <i class="material-icons my-icon">call</i> {{client.phoneNumber}} <br>
-    <i class="material-icons my-icon">mail_outline</i> {{client.email}} <br>
+    <i class="material-icons my-icon">call</i> <a href="tel:{{client.phoneNumber}}">{{client.phoneNumber}}</a> <br>
+    <i class="material-icons my-icon">mail_outline</i> <a href="mailto:{{client.email}}">{{client.email}}</a> <br>
   </mat-card-content>
   <mat-card-footer></mat-card-footer>
 </mat-card>
