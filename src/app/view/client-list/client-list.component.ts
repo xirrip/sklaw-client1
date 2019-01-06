@@ -15,7 +15,7 @@ import {LawClient} from '../../model/lawclient';
 })
   export class ClientListComponent implements OnInit {
 
-  clients: LawClient[];
+  clients: LawClient[] = [];
 
   /*
   displayedColumns = ['id', 'nickName', 'firstName', 'lastName'];

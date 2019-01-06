@@ -2,9 +2,9 @@
   <a mat-flat-button routerLink="{{lawcase.id}}">
     <mat-card-title>{{lawcase.name}}</mat-card-title>
   </a>
-  <mat-card-subtitle>{{lawcase?.caseId}} | {{lawcase.type}} | <a mat-flat-button routerLink="/clients/{{lawcase.mainClientId}}"> {{lawcase.mainClient.firstName}} {{lawcase.mainClient.lastName}}</a></mat-card-subtitle>
+  <mat-card-subtitle>{{lawcase?.caseId}} | {{lawcase?.type}} | <a mat-flat-button routerLink="/clients/{{lawcase?.mainClientId}}"> {{lawcase?.mainClient?.firstName}} {{lawcase?.mainClient?.lastName}}</a></mat-card-subtitle>
   <mat-card-content>
-    {{lawcase.description}}<br>
+    {{lawcase?.description}}<br>
   </mat-card-content>
   <mat-card-footer></mat-card-footer>
 </mat-card>

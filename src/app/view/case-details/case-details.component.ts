@@ -13,8 +13,8 @@ import {CaseService} from '../../service/case.service';
 export class CaseDetailsComponent implements OnInit {
 
   _caseId: number;
-  lawClient: LawClient;
-  lawCase: LawCase;
+  lawClient = new LawClient();
+  lawCase = new LawCase();
 
   constructor(private _router: Router, private _route: ActivatedRoute,
               private _clientService: ClientService, private _caseService: CaseService) {
@@ -29,10 +29,14 @@ export class CaseDetailsComponent implements OnInit {
   ngOnInit() {
     this._caseService.getCase(this._caseId).subscribe(c => {
         this.lawCase = c;
-        this._clientService.getClient(this.lawCase.mainClientId).subscribe(client => this.lawClient = client)
+        this._clientService.getClient(this.lawCase.mainClientId).subscribe(client => this.lawClient = client);
       },
       error => this._router.navigate(['cases'])
     );
+  }
+
+  onUpdate() {
+    this._caseService.updateCase(this.lawCase).subscribe(any => {}, error => alert('save failed'));
   }
 
 }

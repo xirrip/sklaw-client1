@@ -1,22 +1,60 @@
 <mat-card class="client-header">
-    <mat-card-title>{{lawClient?.firstName}} {{lawClient?.lastName}}</mat-card-title>
-    <mat-card-subtitle *ngIf="lawClient?.nickName">{{lawClient?.nickName}}</mat-card-subtitle>
+    <mat-card-title>
+      <mat-form-field class="my-auto-size-field">
+        <input matInput [(ngModel)]="lawClient.firstName" name="First name" required (keyup.enter)="onUpdate()" (blur)="onUpdate()">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="lawClient.lastName" name="Last name" required (keyup.enter)="onUpdate()" (blur)="onUpdate()">
+      </mat-form-field>
+    </mat-card-title>
+    <mat-card-subtitle *ngIf="lawClient?.nickName">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="lawClient.nickName" name="Nick name" required (keyup.enter)="onUpdate()" (blur)="onUpdate()">
+      </mat-form-field>
+    </mat-card-subtitle>
+
   <mat-card-content>
-      {{lawClient?.address}} <br>
-      {{lawClient?.zip}} {{lawClient?.city}} <br>
-      <div *ngIf="lawClient?.country!=='Schweiz' && lawClient?.country!=='Switzerland'">{{lawClient?.country}}</div>
-      <br>
-      <i class="material-icons my-icon">call</i> <a href="tel:{{lawClient?.phoneNumber}}">{{lawClient?.phoneNumber}}</a> <br>
-      <i class="material-icons my-icon">mail_outline</i> <a href="mailto:{{lawClient?.email}}">{{lawClient?.email}}</a> <br>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="lawClient.address" name="Address" required (keyup.enter)="onUpdate()" (blur)="onUpdate()">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="lawClient.zip" name="ZIP" required (keyup.enter)="onUpdate()" (blur)="onUpdate()">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="lawClient.city" name="City" required (keyup.enter)="onUpdate()" (blur)="onUpdate()">
+    </mat-form-field>
+    <br>
+
+    <div *ngIf="lawClient?.country!=='Schweiz' && lawClient?.country!=='Switzerland'">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="lawClient.country" name="Country" required (keyup.enter)="onUpdate()" (blur)="onUpdate()">
+      </mat-form-field>
+    </div>
+
+    <br>
+    <a href="tel:{{lawClient?.phoneNumber}}"><i class="material-icons my-icon">call</i></a>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="lawClient.phoneNumber" name="phone">
+    </mat-form-field>
+    <br>
+
+    <a href="mailto:{{lawClient?.email}}"><i class="material-icons my-icon">mail_outline</i></a>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="lawClient.email" name="email">
+    </mat-form-field>
+    <br>
+
   </mat-card-content>
   <mat-card-footer></mat-card-footer>
 </mat-card>
 
 <mat-card *ngFor="let lawcase of lawCases">
-  <mat-card-title-group>
+  <a mat-flat-button class="my-case-link" routerLink="/cases/{{lawcase.id}}">
     <mat-card-title>{{lawcase.name}}</mat-card-title>
-    <mat-card-subtitle>{{lawcase.type}}</mat-card-subtitle>
-  </mat-card-title-group>
+  </a>
+  <mat-card-subtitle>{{lawcase.type}}</mat-card-subtitle>
   <mat-card-content>
     {{lawcase.description}}<br>
   </mat-card-content>

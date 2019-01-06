@@ -41,5 +41,8 @@ export class ClientService {
     return this._http.get<LawCase[]>(this.clientsUrl + '/' + clientId + '/cases');
   }
 
+  updateClient(lawClient: LawClient): Observable<LawClient> {
+    return this._http.put<LawClient>(this.clientsUrl + '/' + lawClient.id, lawClient);
+  }
 
 }

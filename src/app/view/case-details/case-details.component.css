@@ -15,3 +15,24 @@
   color: indigo;
   padding-right: 5px;
 }
+
+.example-full-width {
+  width: 10cm;
+}
+
+.my-card-footer{
+  margin-top: 0.05cm;
+  margin-bottom: 0.1cm;
+}
+
+::ng-deep .mat-form-field:focus-within .mat-form-field-underline {
+  display: block;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-card-footer{
+  padding-left: 0.4cm;
+}

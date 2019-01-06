@@ -40,6 +40,10 @@ export class CaseService {
       );
   }
 
+  updateCase(lawCase: LawCase): Observable<LawCase> {
+    return this._http.put<LawCase>(this.casesUrl + '/' + lawCase.id, lawCase);
+  }
+
   /*
   getCasesOld(): Observable<LawCase[]> {
     return this._http.get<LawCase[]>(this.casesUrl)

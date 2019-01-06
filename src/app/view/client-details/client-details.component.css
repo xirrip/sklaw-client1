@@ -9,3 +9,23 @@ mat-card.client-header{
   color: indigo;
   padding-right: 5px;
 }
+
+.my-case-link{
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-bottom: 0.1cm;
+}
+
+.my-auto-size-field{
+  /*display: inline-block;*/
+  width: auto;
+  margin-rigth: 0.3cm;
+}
+
+::ng-deep .mat-form-field:focus-within .mat-form-field-underline {
+  display: block;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}

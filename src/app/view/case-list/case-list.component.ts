@@ -10,8 +10,7 @@ import {CaseService} from '../../service/case.service';
 })
 export class CaseListComponent implements OnInit {
 
-  lawcases: LawCase[];
-
+  lawcases: LawCase[] = [];
 
   constructor(private _caseService: CaseService) { }
 
