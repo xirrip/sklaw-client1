@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         user => {
           console.log('Login successful!');
-          this.router.navigate(['user']);
+          this.router.navigate(['clients']);
         },
         _ => alert('Login failed!')
       );
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   onSuccess(): void {
     console.log('Login successful!');
-    this.router.navigate(['user']);
+    this.router.navigate(['clients']);
   }
 
   onFail(): void {

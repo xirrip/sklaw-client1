@@ -16,6 +16,7 @@ import { NewcaseDialogComponent } from './view/newcase-dialog/newcase-dialog.com
 import { CaseListComponent } from './view/case-list/case-list.component';
 import { ClientDetailsComponent } from './view/client-details/client-details.component';
 import { CaseDetailsComponent } from './view/case-details/case-details.component';
+import { TagSearchComponent } from './view/tag-search/tag-search.component';
 
 /**
  * https://angular.io/tutorial
@@ -60,7 +61,8 @@ import { CaseDetailsComponent } from './view/case-details/case-details.component
     NewcaseDialogComponent,
     CaseListComponent,
     ClientDetailsComponent,
-    CaseDetailsComponent
+    CaseDetailsComponent,
+    TagSearchComponent
   ],
   imports: [
     BrowserModule,

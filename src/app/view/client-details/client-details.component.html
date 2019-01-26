@@ -25,7 +25,6 @@
     <mat-form-field class="example-full-width">
       <input matInput [(ngModel)]="lawClient.city" name="City" required (keyup.enter)="onUpdate()" (blur)="onUpdate()">
     </mat-form-field>
-    <br>
 
     <div *ngIf="lawClient?.country!=='Schweiz' && lawClient?.country!=='Switzerland'">
       <mat-form-field class="example-full-width">
@@ -39,18 +38,16 @@
       <input matInput [(ngModel)]="lawClient.phoneNumber" name="phone">
     </mat-form-field>
     <br>
-
     <a href="mailto:{{lawClient?.email}}"><i class="material-icons my-icon">mail_outline</i></a>
     <mat-form-field class="example-full-width">
       <input matInput [(ngModel)]="lawClient.email" name="email">
     </mat-form-field>
-    <br>
 
   </mat-card-content>
   <mat-card-footer></mat-card-footer>
 </mat-card>
 
-<mat-card *ngFor="let lawcase of lawCases">
+<mat-card class="case-list" *ngFor="let lawcase of lawCases">
   <a mat-flat-button class="my-case-link" routerLink="/cases/{{lawcase.id}}">
     <mat-card-title>{{lawcase.name}}</mat-card-title>
   </a>

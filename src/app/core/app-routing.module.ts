@@ -1,15 +1,13 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from '../view/login/login.component';
 import {ClientListComponent} from '../view/client-list/client-list.component';
 import {RegisterComponent} from '../view/register/register.component';
-import {AdminGuard} from './admin.guard';
 import {RoleGuard} from './role.guard';
 import {CaseListComponent} from '../view/case-list/case-list.component';
 import {ClientDetailsComponent} from '../view/client-details/client-details.component';
 import {CaseDetailsComponent} from '../view/case-details/case-details.component';
+import {TagSearchComponent} from '../view/tag-search/tag-search.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -21,7 +19,9 @@ const routes: Routes = [
   { path: 'cases', component: CaseListComponent },
 
   { path: 'clients/:id', component: ClientDetailsComponent },
-  { path: 'cases/:id', component: CaseDetailsComponent }
+  { path: 'cases/:id', component: CaseDetailsComponent },
+
+  { path: 'tags', component: TagSearchComponent }
 ];
 
 @NgModule({

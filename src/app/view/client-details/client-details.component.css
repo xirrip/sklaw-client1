@@ -2,6 +2,10 @@ mat-card.client-header{
   margin-bottom: 1cm;
 }
 
+mat-card.case-list{
+  margin-bottom: 0.3cm;
+}
+
 .my-icon{
   font-size: 18px;
   vertical-align: text-top;
