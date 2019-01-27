@@ -1,8 +1,12 @@
-mat-card.client-header{
+mat-card.topic-header{
   margin-bottom: 1cm;
 }
 
-mat-card.case-list{
+mat-card.linked-topic-list{
+  margin-bottom: 0.3cm;
+}
+
+mat-card.linked-item-list{
   margin-bottom: 0.3cm;
 }
 
@@ -14,7 +18,7 @@ mat-card.case-list{
   padding-right: 5px;
 }
 
-.my-case-link{
+.my-topic-link{
   padding-left: 0px;
   margin-left: 0px;
   margin-bottom: 0.1cm;

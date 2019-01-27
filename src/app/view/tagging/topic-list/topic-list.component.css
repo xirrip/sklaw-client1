@@ -1,17 +1,8 @@
-.mat-card{
-  margin-bottom: 0.5cm;
+a.topic-link{
+  margin: 0px;
+  padding: 0px;
 }
 
-.mat-flat-button{
-  padding-left: 0px;
-  margin-left: 0px;
-  margin-bottom: 0.1cm;
-}
-
-.my-icon{
-  font-size: 18px;
-  vertical-align: text-top;
-  /*text-align: center;*/
-  color: indigo;
-  padding-right: 5px;
+td{
+  text-align: left;
 }

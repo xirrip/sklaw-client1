@@ -12,6 +12,8 @@ import {TagItem} from '../../../model/tagitem';
 export class TagSearchComponent implements OnInit {
 
   searchtopics: string;
+  depth = 3;
+  results: TagItem[] = [];
 
   constructor(private _taggingService: TaggingService, private _dialog: MatDialog) { }
 
@@ -20,6 +22,14 @@ export class TagSearchComponent implements OnInit {
 
   tagSearch() {
     console.log('Searching...');
+    this._taggingService.search(this.searchtopics, this.depth)
+      .subscribe(
+        (data: TagItem[]) => this.results = data,
+        err => {
+          console.log('could not get search results');
+          this.results = [];
+        }
+        );
   }
 
   createNewTag() {

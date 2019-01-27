@@ -1,3 +1,4 @@
+<!--
 <mat-card *ngFor="let topic of topics">
   <a mat-flat-button routerLink="{{topic.id}}">
     <mat-card-title>{{topic.name}}</mat-card-title>
@@ -8,3 +9,11 @@
   </mat-card-content>
   <mat-card-footer></mat-card-footer>
 </mat-card>
+-->
+
+<h2>Topics</h2>
+<table>
+  <tr *ngFor="let topic of topics">
+    <td><a mat-flat-button class="topic-link" routerLink="{{topic.id}}">{{topic.name}}</a></td>
+  </tr>
+</table>

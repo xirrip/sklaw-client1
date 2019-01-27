@@ -1,3 +1,15 @@
 a.floaty {
   float: right;
 }
+
+mat-card.tag-search-header{
+  margin-bottom: 0.5cm;
+}
+
+mat-card.tag-search-result{
+  margin-bottom: 0.3cm;
+}
+
+mat-card-content.result-content{
+  padding-left: 0.45cm;
+}

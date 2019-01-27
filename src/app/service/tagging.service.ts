@@ -41,4 +41,8 @@ export class TaggingService {
   }
 
 
+  search(topics: string, depth: number) {
+    return this._http.get<TagItem[]>(this.taggingUrl + '/items?universe=public&topics=' + topics + '&depth=' + depth);
+  }
+
 }

@@ -15,7 +15,14 @@
         </tr>
         <tr>
           <td>
-            Show all <a mat-flat-button routerLink="topics">topics</a>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Depth" [(ngModel)]="depth" name="Depth">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a mat-flat-button routerLink="topics">Show all topics</a>
           </td>
         </tr></table>
     </form>
@@ -23,4 +30,19 @@
   <mat-card-actions>
     <button mat-raised-button (click)="tagSearch()" color="primary">Search</button>
   </mat-card-actions>
+</mat-card>
+
+<mat-card class="tag-search-result" *ngFor="let result of results">
+  <mat-card-header>
+    <mat-card-title>{{result.name}}</mat-card-title>
+    <mat-card-subtitle>
+      <a href="{{result.url}}">{{result.url}}</a>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="result-content">
+    {{result.description}}
+    <br>
+    Topics: {{result.topics}}
+  </mat-card-content>
+  <mat-card-footer></mat-card-footer>
 </mat-card>
