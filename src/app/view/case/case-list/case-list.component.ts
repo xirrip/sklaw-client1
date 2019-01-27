@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {LawCase} from '../../model/lawcase';
-import {LawClient} from '../../model/lawclient';
-import {CaseService} from '../../service/case.service';
+import {LawCase} from '../../../model/lawcase';
+import {LawClient} from '../../../model/lawclient';
+import {CaseService} from '../../../service/case.service';
 
 @Component({
   selector: 'app-case-list',

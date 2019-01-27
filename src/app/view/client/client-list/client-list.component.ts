@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {ClientService} from '../../service/client.service';
+import {ClientService} from '../../../service/client.service';
 import {Observable} from 'rxjs';
-import {LawClient} from '../../model/lawclient';
+import {LawClient} from '../../../model/lawclient';
 
 /**
  * https://material.angular.io/components/table/examples

@@ -1,0 +1,27 @@
+mat-form-field{
+  padding-right: 0.5cm;
+}
+
+.newcase-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.newcase-radio-button {
+  margin: 5px;
+}
+
+.newcase-selected-value {
+  margin: 15px 0;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+

@@ -3,7 +3,7 @@
     <mat-card-title>Tag search</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <a mat-fab class="floaty" color="primary" routerLink=".">+</a>
+    <a mat-fab class="floaty" color="primary" (click)="createNewTag()">+</a>
     <form class="example-form">
       <table class="example-full-width" cellspacing="0">
         <tr>
@@ -15,7 +15,7 @@
         </tr>
         <tr>
           <td>
-            Show all <a>topics</a>
+            Show all <a mat-flat-button routerLink="topics">topics</a>
           </td>
         </tr></table>
     </form>

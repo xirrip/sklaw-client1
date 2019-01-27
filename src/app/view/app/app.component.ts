@@ -1,12 +1,12 @@
 import {Component } from '@angular/core';
 import {Cookie} from 'ng2-cookies/ng2-cookies';
-import {AuthorizationService} from './service/authorization.service';
+import {AuthorizationService} from '../../service/authorization.service';
 import {MatDialog} from '@angular/material';
-import {NewcaseDialogComponent} from './view/newcase-dialog/newcase-dialog.component';
-import {ClientService} from './service/client.service';
-import {LawClient} from './model/lawclient';
+import {NewcaseDialogComponent} from '../case/newcase-dialog/newcase-dialog.component';
+import {ClientService} from '../../service/client.service';
+import {LawClient} from '../../model/lawclient';
 import {flatMap, tap} from 'rxjs/operators';
-import {LawCase} from './model/lawcase';
+import {LawCase} from '../../model/lawcase';
 
 @Component({
   selector: 'app-root',

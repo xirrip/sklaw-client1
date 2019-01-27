@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {LawClient} from '../../model/lawclient';
-import {LawCase} from '../../model/lawcase';
-import {ClientService} from '../../service/client.service';
+import {LawClient} from '../../../model/lawclient';
+import {LawCase} from '../../../model/lawcase';
+import {ClientService} from '../../../service/client.service';
 
 @Component({
   selector: 'app-client-details',
@@ -16,7 +16,10 @@ export class ClientDetailsComponent implements OnInit {
   lawCases: LawCase[] = [];
 
   constructor(private _router: Router, private _route: ActivatedRoute, private _clientService: ClientService) {
-    this._route.params.subscribe( p => this._clientId = p['id']);
+    this._route.params.subscribe( p => {
+      this._clientId = p['id'];
+      this.refresh();
+    });
 
     if (!this._clientId) {
       this._router.navigate(['clients']);
@@ -25,6 +28,10 @@ export class ClientDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.refresh();
+  }
+
+  refresh() {
     this._clientService.getClient(this._clientId).subscribe(c => this.lawClient = c, error => this._router.navigate(['clients']));
     this._clientService.getCasesForClient(this._clientId).subscribe(c => this.lawCases = c, error => this.lawCases = []);
   }

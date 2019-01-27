@@ -1,0 +1,10 @@
+<mat-card *ngFor="let topic of topics">
+  <a mat-flat-button routerLink="{{topic.id}}">
+    <mat-card-title>{{topic.name}}</mat-card-title>
+  </a>
+  <mat-card-subtitle ></mat-card-subtitle>
+  <mat-card-content>
+    weight: {{topic.weight}}
+  </mat-card-content>
+  <mat-card-footer></mat-card-footer>
+</mat-card>

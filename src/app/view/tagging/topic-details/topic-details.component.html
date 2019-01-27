@@ -1,0 +1,40 @@
+<mat-card class="topic-header">
+  <mat-card-title>
+    <mat-form-field class="my-auto-size-field">
+      <input matInput [(ngModel)]="topic.name" name="Name" required (keyup.enter)="onUpdate()" (blur)="onUpdate()">
+    </mat-form-field>
+  </mat-card-title>
+  <mat-card-subtitle *ngIf="lawClient?.nickName">
+  </mat-card-subtitle>
+
+  <mat-card-content>
+    id: {{topic.id}} weight: {{topic.weight}} universe: {{topic.universe}}
+  </mat-card-content>
+  <mat-card-footer></mat-card-footer>
+</mat-card>
+
+<br mat-line>
+<h2 mat-subheader>Linked topics</h2>
+
+<mat-card class="linked-topic-list" *ngFor="let linkedTopic of linkedTopics">
+  <a mat-flat-button class="my-case-link" routerLink="../{{linkedTopic.id}}">
+    <mat-card-title>{{linkedTopic.name}}</mat-card-title>
+  </a>
+  <mat-card-subtitle></mat-card-subtitle>
+  <mat-card-content>
+  </mat-card-content>
+  <mat-card-footer></mat-card-footer>
+</mat-card>
+
+<h2 mat-subheader>Linked items</h2>
+
+<mat-card class="linked-item-list" *ngFor="let linkedItem of linkedItems">
+  <a mat-flat-button class="my-case-link" routerLink="/tags/items/{{linkedItem.id}}">
+    <mat-card-title>{{linkedItem.name}}</mat-card-title>
+  </a>
+  <mat-card-subtitle><a mat-flat-button href="{{linkedItem.url}}">{{linkedItem.url}}</a></mat-card-subtitle>
+  <mat-card-content>
+    {{linkedItem.description}}
+  </mat-card-content>
+  <mat-card-footer></mat-card-footer>
+</mat-card>

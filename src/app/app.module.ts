@@ -2,21 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { CustomMaterialModule } from './core/material.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './view/login/login.component';
+import { AppComponent } from './view/app/app.component';
+import { LoginComponent } from './view/account/login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './core/app-routing.module';
-import { ClientListComponent } from './view/client-list/client-list.component';
+import { ClientListComponent } from './view/client/client-list/client-list.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ClientService} from './service/client.service';
 import {JwtInterceptor} from './interceptor/jwt-interceptor';
-import { RegisterComponent } from './view/register/register.component';
-import { NewcaseDialogComponent } from './view/newcase-dialog/newcase-dialog.component';
-import { CaseListComponent } from './view/case-list/case-list.component';
-import { ClientDetailsComponent } from './view/client-details/client-details.component';
-import { CaseDetailsComponent } from './view/case-details/case-details.component';
-import { TagSearchComponent } from './view/tag-search/tag-search.component';
+import { RegisterComponent } from './view/account/register/register.component';
+import { NewcaseDialogComponent } from './view/case/newcase-dialog/newcase-dialog.component';
+import { CaseListComponent } from './view/case/case-list/case-list.component';
+import { ClientDetailsComponent } from './view/client/client-details/client-details.component';
+import { CaseDetailsComponent } from './view/case/case-details/case-details.component';
+import { TagSearchComponent } from './view/tagging/tag-search/tag-search.component';
+import { NewTagItemDialogComponent } from './view/tagging/new-tagitem-dialog/new-tag-item-dialog.component';
+import { TopicListComponent } from './view/tagging/topic-list/topic-list.component';
+import { TopicDetailsComponent } from './view/tagging/topic-details/topic-details.component';
 
 /**
  * https://angular.io/tutorial
@@ -62,7 +65,10 @@ import { TagSearchComponent } from './view/tag-search/tag-search.component';
     CaseListComponent,
     ClientDetailsComponent,
     CaseDetailsComponent,
-    TagSearchComponent
+    TagSearchComponent,
+    NewTagItemDialogComponent,
+    TopicListComponent,
+    TopicDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +88,8 @@ import { TagSearchComponent } from './view/tag-search/tag-search.component';
     }
   ],
   entryComponents: [
-    NewcaseDialogComponent
+    NewcaseDialogComponent,
+    NewTagItemDialogComponent
   ],
   bootstrap: [AppComponent]
 })

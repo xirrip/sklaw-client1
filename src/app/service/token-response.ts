@@ -1,5 +1,3 @@
-import {User} from '../model/user';
-
 export class TokenResponse {
   username: string;
   email: string;

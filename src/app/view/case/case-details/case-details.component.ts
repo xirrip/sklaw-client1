@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ClientService} from '../../service/client.service';
-import {LawClient} from '../../model/lawclient';
-import {LawCase} from '../../model/lawcase';
-import {CaseService} from '../../service/case.service';
+import {ClientService} from '../../../service/client.service';
+import {LawClient} from '../../../model/lawclient';
+import {LawCase} from '../../../model/lawcase';
+import {CaseService} from '../../../service/case.service';
 
 @Component({
   selector: 'app-case-details',
