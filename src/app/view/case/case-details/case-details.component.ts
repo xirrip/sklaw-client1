@@ -29,7 +29,7 @@ export class CaseDetailsComponent implements OnInit {
   ngOnInit() {
     this._caseService.getCase(this._caseId).subscribe(c => {
         this.lawCase = c;
-        this._clientService.getClient(this.lawCase.mainClientId).subscribe(client => this.lawClient = client);
+        this.lawClient = c.mainClient;
       },
       error => this._router.navigate(['cases'])
     );

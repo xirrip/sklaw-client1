@@ -52,7 +52,7 @@ export class AppComponent {
               ))
             .subscribe(
               (lawCase: LawCase) => console.log('case created: ' + lawCase.id),
-              err => console.log('could not create client.')
+              err => console.log('could not create case! ' + err)
             );
         } else {
           this._clientService.createCase(

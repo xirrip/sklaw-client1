@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {LawCase} from '../model/lawcase';
-import {flatMap, map, mergeMap, switchMap} from 'rxjs/operators';
-import {LawClient} from '../model/lawclient';
+import {flatMap} from 'rxjs/operators';
 import {ClientService} from './client.service';
 
 @Injectable({
@@ -21,7 +20,7 @@ export class CaseService {
       .pipe(
         flatMap(
           (cases: LawCase[]) => {
-            cases.map((c: LawCase) => this._clientService.getClient(c.mainClientId).subscribe(theClient => c.mainClient = theClient));
+            cases.map((c: LawCase) => this._clientService.getClient(c.mainClient.id).subscribe(theClient => c.mainClient = theClient));
             return of(cases);
           }
         )
@@ -33,7 +32,7 @@ export class CaseService {
       .pipe(
         flatMap(
           (aCase: LawCase) => {
-            this._clientService.getClient(aCase.mainClientId).subscribe(c => aCase.mainClient = c);
+            this._clientService.getClient(aCase.mainClient.id).subscribe(c => aCase.mainClient = c);
             return of(aCase);
           }
         )

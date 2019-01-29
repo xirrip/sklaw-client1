@@ -1,5 +1,5 @@
 export class LawClient {
-  id: Number;
+  id: number;
   nickName: string;
   firstName: string;
   middleName: string;
