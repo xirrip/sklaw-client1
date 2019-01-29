@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NewTagItemDialogComponent} from '../new-tagitem-dialog/new-tag-item-dialog.component';
+import {NewTagItemDialogComponent} from '../new-tag-item-dialog/new-tag-item-dialog.component';
 import {MatDialog} from '@angular/material';
 import {TaggingService} from '../../../service/tagging.service';
 import {TagItem} from '../../../model/tagitem';

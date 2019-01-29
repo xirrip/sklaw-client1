@@ -5,19 +5,29 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatProgressSpinnerModule, MatTableModule,
+  MatProgressSpinnerModule,
+  MatTableModule,
   MatToolbarModule,
-  MatDialogModule, MatDividerModule, MatRadioModule, MatOptionModule, MatAutocompleteModule, MatSelectModule, MatIconModule
+  MatDialogModule,
+  MatDividerModule,
+  MatRadioModule,
+  MatOptionModule,
+  MatAutocompleteModule,
+  MatSelectModule,
+  MatIconModule,
+  MatDatepickerModule, MatNativeDateModule
 } from '@angular/material';
 
 @NgModule({
   imports: [ CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatFormFieldModule,
     MatProgressSpinnerModule, MatInputModule, MatTableModule, MatDialogModule, MatDividerModule,
-    MatRadioModule, MatOptionModule, MatAutocompleteModule, MatSelectModule, MatIconModule
+    MatRadioModule, MatOptionModule, MatAutocompleteModule, MatSelectModule, MatIconModule,
+    MatDatepickerModule, MatNativeDateModule
   ],
   exports: [ CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatFormFieldModule,
     MatProgressSpinnerModule, MatInputModule, MatTableModule, MatDialogModule, MatDividerModule,
-    MatRadioModule, MatOptionModule, MatAutocompleteModule, MatSelectModule, MatIconModule
+    MatRadioModule, MatOptionModule, MatAutocompleteModule, MatSelectModule, MatIconModule,
+    MatDatepickerModule, MatNativeDateModule
   ],
 })
 export class CustomMaterialModule { }

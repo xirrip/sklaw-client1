@@ -4,6 +4,8 @@ import {Observable, of} from 'rxjs';
 import {LawCase} from '../model/lawcase';
 import {flatMap} from 'rxjs/operators';
 import {ClientService} from './client.service';
+import {LawClient} from '../model/lawclient';
+import {LawTask} from '../model/law-task';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +30,8 @@ export class CaseService {
   }
 
   getCase(id: number): Observable<LawCase> {
-    return this._http.get<LawCase>(this.casesUrl + '/' + id)
+    return this._http.get<LawCase>(this.casesUrl + '/' + id);
+    /*
       .pipe(
         flatMap(
           (aCase: LawCase) => {
@@ -37,27 +40,21 @@ export class CaseService {
           }
         )
       );
+    */
   }
 
   updateCase(lawCase: LawCase): Observable<LawCase> {
     return this._http.put<LawCase>(this.casesUrl + '/' + lawCase.id, lawCase);
   }
 
-  /*
-  getCasesOld(): Observable<LawCase[]> {
-    return this._http.get<LawCase[]>(this.casesUrl)
-      .pipe(
-        flatMap(
-          (cases: LawCase[]) => {
-            cases.forEach(
-              c => this._clientService.getClient(c.mainClientId).subscribe(theClient => c.mainClient = theClient)
-            );
-            return of(cases);
-          }
-        )
-      );
+  createTask(lawCase: LawCase, lawTask: LawTask): Observable<LawTask> {
+    return this._http.post<LawTask>(this.casesUrl + '/' + lawCase.id + '/tasks', lawTask);
   }
-  */
+
+  getTasks(id: number): Observable<LawTask[]> {
+    return this._http.get<LawTask[]>(this.casesUrl + '/' + id + '/tasks');
+  }
+
 }
 
 

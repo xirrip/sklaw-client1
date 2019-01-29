@@ -2,7 +2,7 @@ import {Component } from '@angular/core';
 import {Cookie} from 'ng2-cookies/ng2-cookies';
 import {AuthorizationService} from '../../service/authorization.service';
 import {MatDialog} from '@angular/material';
-import {NewcaseDialogComponent} from '../case/newcase-dialog/newcase-dialog.component';
+import {NewCaseDialogComponent} from '../case/newcase-dialog/new-case-dialog.component';
 import {ClientService} from '../../service/client.service';
 import {LawClient} from '../../model/lawclient';
 import {flatMap, tap} from 'rxjs/operators';
@@ -33,7 +33,7 @@ export class AppComponent {
   }
 
   createNewCase() {
-    const createNewCaseDialog = this.dialog.open(NewcaseDialogComponent, {
+    const createNewCaseDialog = this.dialog.open(NewCaseDialogComponent, {
       width: '600px',
       data: 'data to be passed in'
     });

@@ -1,3 +1,7 @@
+mat-card.my-case-header{
+  margin-bottom: 1cm;
+}
+
 .mat-card{
   margin-bottom: 0.5cm;
 }
@@ -35,4 +39,9 @@
 
 ::ng-deep .mat-card-footer{
   padding-left: 0.4cm;
+}
+
+a.floaty {
+  float: right;
+  z-index: 100;
 }

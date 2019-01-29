@@ -12,14 +12,15 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ClientService} from './service/client.service';
 import {JwtInterceptor} from './interceptor/jwt-interceptor';
 import { RegisterComponent } from './view/account/register/register.component';
-import { NewcaseDialogComponent } from './view/case/newcase-dialog/newcase-dialog.component';
+import { NewCaseDialogComponent } from './view/case/newcase-dialog/new-case-dialog.component';
 import { CaseListComponent } from './view/case/case-list/case-list.component';
 import { ClientDetailsComponent } from './view/client/client-details/client-details.component';
 import { CaseDetailsComponent } from './view/case/case-details/case-details.component';
 import { TagSearchComponent } from './view/tagging/tag-search/tag-search.component';
-import { NewTagItemDialogComponent } from './view/tagging/new-tagitem-dialog/new-tag-item-dialog.component';
+import { NewTagItemDialogComponent } from './view/tagging/new-tag-item-dialog/new-tag-item-dialog.component';
 import { TopicListComponent } from './view/tagging/topic-list/topic-list.component';
 import { TopicDetailsComponent } from './view/tagging/topic-details/topic-details.component';
+import { NewTaskDialogComponent } from './view/case/new-task-dialog/new-task-dialog.component';
 
 /**
  * https://angular.io/tutorial
@@ -61,14 +62,15 @@ import { TopicDetailsComponent } from './view/tagging/topic-details/topic-detail
     LoginComponent,
     ClientListComponent,
     RegisterComponent,
-    NewcaseDialogComponent,
+    NewCaseDialogComponent,
     CaseListComponent,
     ClientDetailsComponent,
     CaseDetailsComponent,
     TagSearchComponent,
     NewTagItemDialogComponent,
     TopicListComponent,
-    TopicDetailsComponent
+    TopicDetailsComponent,
+    NewTaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -88,8 +90,9 @@ import { TopicDetailsComponent } from './view/tagging/topic-details/topic-detail
     }
   ],
   entryComponents: [
-    NewcaseDialogComponent,
-    NewTagItemDialogComponent
+    NewCaseDialogComponent,
+    NewTagItemDialogComponent,
+    NewTaskDialogComponent
   ],
   bootstrap: [AppComponent]
 })

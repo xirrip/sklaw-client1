@@ -6,10 +6,10 @@ import {ClientService} from '../../../service/client.service';
 
 @Component({
   selector: 'app-newcase-dialog',
-  templateUrl: './newcase-dialog.component.html',
-  styleUrls: ['./newcase-dialog.component.css']
+  templateUrl: './new-case-dialog.component.html',
+  styleUrls: ['./new-case-dialog.component.css']
 })
-export class NewcaseDialogComponent implements OnInit {
+export class NewCaseDialogComponent implements OnInit {
 
   lawClient: LawClient;
   lawCase: LawCase;
@@ -30,12 +30,12 @@ export class NewcaseDialogComponent implements OnInit {
     this.newClientEntryToggle = false;
 
     this.allClients = [];
-    this._clientService.getClients().subscribe( (clients: LawClient[]) => this.allClients = clients.sort(
-      (a: LawClient, b: LawClient) => (a.lastName + ' ' + a.firstName).localeCompare(b.lastName + ' ' + b.firstName)
-    ) );
   }
 
   ngOnInit() {
+    this._clientService.getClients().subscribe( (clients: LawClient[]) => this.allClients = clients.sort(
+      (a: LawClient, b: LawClient) => (a.lastName + ' ' + a.firstName).localeCompare(b.lastName + ' ' + b.firstName)
+    ) );
   }
 
 }

@@ -24,3 +24,18 @@
     <a href="mailto:{{lawClient?.email}}"><i class="material-icons my-icon">mail_outline</i></a>{{lawClient?.email}} <br>
   </mat-card-footer>
 </mat-card>
+<a mat-fab class="floaty" color="primary" (click)="createNewTask()">+</a>
+
+<mat-card class="case-tasks" *ngFor="let lawTask of lawTasks">
+  <mat-card-header>
+    <mat-card-title>{{lawTask.type}}</mat-card-title>
+    <mat-card-subtitle>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="result-content">
+    {{lawTask.description}}
+    <br>
+    Due date: {{lawTask.dueDate}}
+  </mat-card-content>
+  <mat-card-footer></mat-card-footer>
+</mat-card>
